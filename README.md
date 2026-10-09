@@ -99,18 +99,35 @@ An ultra-refined, responsive, and seamless **Support & Donate** web application 
 
 ---
 
-## 🌐 Deploying to GitHub Pages (No Blank Page Fix)
+## 🌐 Deploying to GitHub Pages (Fixing Blank White Page)
 
-### Why GitHub Pages shows a blank white page by default:
-By default, Vite builds assets pointing to the root domain (`/assets/...`). When deployed on GitHub Pages under a repository subfolder (e.g. `https://rakshittips.github.io/Rakshittips/`), the browser fails to find the assets at the domain root, resulting in 404 errors and a blank white screen.
+### ⚠️ Aapki live link (`rakshittips.github.io/Rakshittips-Support`) par Blank White Page aane ki wajah:
+Aapke GitHub repo me GitHub Pages ka source **"Deploy from a branch (main / root)"** set hai. Iski wajah se GitHub Pages aapki uncompiled `index.html` file serve kar raha hai jisme:
+```html
+<script type="module" src="/src/main.tsx"></script> <!-- Browser cannot run raw .tsx! -->
+```
+Browsers direct `.tsx` file nahi chala sakte, isliye screen blank ho jaati hai!
 
-### How this project fixes it:
-1. **Relative Base Path (`base: './'`)**:
-   `vite.config.ts` is configured with `base: './'`, ensuring all JavaScript and CSS files load relative to the repository folder on GitHub Pages.
-2. **Automatic 404 & DonateSupport.html Fallbacks**:
-   On `npm run build`, `dist/index.html` is automatically cloned to `dist/404.html` and `dist/DonateSupport.html` to guarantee direct links and SPA navigation work without 404s.
-3. **Automated GitHub Actions Deployment**:
-   A ready-to-use `.github/workflows/deploy.yml` workflow is included. Simply push your code to `main`, go to **Settings > Pages** on your GitHub repo, and set **Source: GitHub Actions**.
+---
+
+### ✅ Sirf 1 Setting change karke Live chalaane ka tareeka (Recommended):
+
+1. Apne GitHub repository (`Rakshittips-Support`) me **Settings** par jayein.
+2. Left sidebar me **Pages** par click karein.
+3. **Build and deployment** section ke andar:
+   - **Source**: Dropdown me **"Deploy from a branch"** ko badal kar **"GitHub Actions"** select karein!
+4. Repository me updated `.github/workflows/deploy.yml` push karein (ya **Actions** tab me ja kar **"Deploy to GitHub Pages"** par **Run workflow** click karein).
+5. GitHub Actions automatic `npm install --legacy-peer-deps` aur `npm run build` run karega aur `./dist` folder deploy kar dega!
+6. Ab aapka URL `https://rakshittips.github.io/Rakshittips-Support` **100% perfect, fast aur working load hoga!**
+
+---
+
+### 🚀 Alternate Option (1-Command Deploy via gh-pages):
+Agar aap GitHub Actions use nahi karna chahte, to aap terminal se direct deploy kar sakte hain:
+```bash
+npm run deploy
+```
+Ye script automatically project ko build karega aur compiled files ko `gh-pages` branch par push kar dega. Fir GitHub Settings > Pages me branch `gh-pages` select kar lijiye.
 
 ---
 
