@@ -1,0 +1,6 @@
+{
+  "name": "Support Rakshittips",
+  "description": "Support solo developer Rakshittips with seamless UPI payments, custom amounts, live QR generator, multi-language support, and supporter tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

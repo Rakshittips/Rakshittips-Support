@@ -1,0 +1,203 @@
+export interface LanguageItem {
+  code: string;
+  name: string;
+  flag: string;
+  rtl: boolean;
+}
+
+export const LANGS: LanguageItem[] = [
+  { code: 'en', name: 'English', flag: '🇬🇧', rtl: false },
+  { code: 'ar', name: 'Arabic (Saudi Arabia)', flag: '🇸🇦', rtl: true },
+  { code: 'az', name: 'Azerbaijani', flag: '🇦🇿', rtl: false },
+  { code: 'de', name: 'German', flag: '🇩🇪', rtl: false },
+  { code: 'el', name: 'Greek (Greece)', flag: '🇬🇷', rtl: false },
+  { code: 'es', name: 'Spanish', flag: '🇪🇸', rtl: false },
+  { code: 'fr', name: 'French', flag: '🇫🇷', rtl: false },
+  { code: 'hi', name: 'Hindi (India)', flag: '🇮🇳', rtl: false },
+  { code: 'hu', name: 'Hungarian', flag: '🇭🇺', rtl: false },
+  { code: 'id', name: 'Indonesian', flag: '🇮🇩', rtl: false },
+  { code: 'it', name: 'Italian', flag: '🇮🇹', rtl: false },
+  { code: 'pl', name: 'Polish', flag: '🇵🇱', rtl: false },
+  { code: 'pt', name: 'Brazilian Portuguese', flag: '🇧🇷', rtl: false },
+  { code: 'sr', name: 'Serbian (Serbia)', flag: '🇷🇸', rtl: false },
+  { code: 'th', name: 'Thai', flag: '🇹🇭', rtl: false },
+];
+
+export interface TranslationDict {
+  switchLanguage: string;
+  switchLanguageDesc: string;
+  heroTitle: string;
+  heroP: string;
+  statSolo: string;
+  statFree: string;
+  statAllReleases: string;
+  statNoAds: string;
+  statEver: string;
+  waysToSupport: string;
+  upiDesc: string;
+  paypalDesc?: string;
+  coffeeDesc?: string;
+  telegramName: string;
+  telegramDesc: string;
+  worksWith: string;
+  openUpiApp: string;
+  chooseAmount: string;
+  donate: string;
+  noteText: string;
+  upiIdLabel: string;
+  copyId: string;
+  [key: string]: string | undefined;
+}
+
+export const I18N: Record<string, TranslationDict> = {
+    en:{ switchLanguage:'Switch Language', switchLanguageDesc:"Change the website's display language",
+      heroTitle:'Rakshittips Support & Donate',
+      heroP:"Directly support solo developer Rakshit Dhakariya to fuel new Android mods, patches, and open-source utilities.",
+      statSolo:'Solo-built', statFree:'Free', statAllReleases:'All releases', statNoAds:'No ads', statEver:'Ever',
+      waysToSupport:'Ways to support', upiDesc:'Instant, no fees — scan below or use the ID',
+      paypalDesc:'One-time or recurring, international', coffeeDesc:'Quick one-off support',
+      telegramName:'Telegram DM', telegramDesc:'Message the developer directly',
+      worksWith:'Works with', openUpiApp:'Open in UPI app', chooseAmount:'Choose an amount',
+      donate:'Donate', noteText:'Swap in your real PayPal link before publishing — the QR code is generated live from the UPI ID in the image URL.',
+      upiIdLabel:'UPI ID', copyId:'Copy ID' },
+    ar:{ switchLanguage:'تبديل اللغة', switchLanguageDesc:'غيّر لغة عرض الموقع',
+      heroTitle:'استمر في دعم التعديلات',
+      heroP:'كل إصدار وتحديث وصفحة هنا صُنعت بشكل فردي — بلا فريق وبلا ميزانية إعلانات. إذا وفّر لك شيء صنعته وقتًا أو أتاح لك ميزة أردتها، فمساهمة صغيرة تُبقي العمل مستمرًا.',
+      statSolo:'صُنع فرديًا', statFree:'مجاني', statAllReleases:'كل الإصدارات', statNoAds:'بلا إعلانات', statEver:'أبدًا',
+      waysToSupport:'طرق الدعم', upiDesc:'فوري وبدون رسوم — امسح الرمز أدناه أو استخدم المعرف',
+      paypalDesc:'دفعة واحدة أو متكررة، دوليًا', coffeeDesc:'دعم سريع لمرة واحدة',
+      telegramName:'مراسلة عبر تيليجرام', telegramDesc:'راسل المطور مباشرة',
+      worksWith:'يعمل مع', openUpiApp:'فتح في تطبيق UPI', chooseAmount:'اختر مبلغًا',
+      donate:'تبرّع', noteText:'استبدل رابط PayPal الحقيقي قبل النشر — رمز الاستجابة السريعة يُنشأ مباشرة من معرف UPI في رابط الصورة.',
+      upiIdLabel:'معرف UPI', copyId:'نسخ المعرف' },
+    az:{ switchLanguage:'Dili dəyiş', switchLanguageDesc:'Saytın göstərilmə dilini dəyişin',
+      heroTitle:'Modları dəstəkləməyə davam edin',
+      heroP:'Buradakı hər versiya, yamaq və açılış səhifəsi tək başına hazırlanıb — nə komanda, nə də reklam büdcəsi var. Hazırladığım bir şey vaxtınıza qənaət etdirdisə və ya istədiyiniz funksiyanı açdısa, kiçik bir dəstək işi davam etdirir.',
+      statSolo:'Tək başına', statFree:'Pulsuz', statAllReleases:'Bütün buraxılışlar', statNoAds:'Reklamsız', statEver:'Heç vaxt',
+      waysToSupport:'Dəstək yolları', upiDesc:'Ani, komissiyasız — aşağıdan skan edin və ya ID istifadə edin',
+      paypalDesc:'Birdəfəlik və ya təkrarlanan, beynəlxalq', coffeeDesc:'Tez birdəfəlik dəstək',
+      telegramName:'Telegram DM', telegramDesc:'Tərtibatçıya birbaşa yazın',
+      worksWith:'Uyğun tətbiqlər', openUpiApp:'UPI tətbiqində aç', chooseAmount:'Məbləğ seçin',
+      donate:'Dəstək ol', noteText:'Nəşrdən əvvəl əsl PayPal linkinizi yerləşdirin — QR kod şəkil linkindəki UPI ID-dən canlı yaradılır.',
+      upiIdLabel:'UPI ID', copyId:'ID-ni kopyala' },
+    de:{ switchLanguage:'Sprache wechseln', switchLanguageDesc:'Anzeigesprache der Website ändern',
+      heroTitle:'Die Mods am Leben erhalten',
+      heroP:'Jeder Build, jeder Patch und jede Landingpage hier entsteht solo — kein Team, kein Werbebudget. Wenn dir etwas Zeit gespart oder eine gewünschte Funktion freigeschaltet hat, hält ein kleiner Beitrag die Arbeit am Laufen.',
+      statSolo:'Solo entwickelt', statFree:'Kostenlos', statAllReleases:'Alle Releases', statNoAds:'Keine Werbung', statEver:'Niemals',
+      waysToSupport:'Unterstützungsmöglichkeiten', upiDesc:'Sofort, gebührenfrei — scannen oder ID verwenden',
+      paypalDesc:'Einmalig oder wiederkehrend, international', coffeeDesc:'Schnelle einmalige Unterstützung',
+      telegramName:'Telegram-DM', telegramDesc:'Schreib dem Entwickler direkt',
+      worksWith:'Funktioniert mit', openUpiApp:'In UPI-App öffnen', chooseAmount:'Betrag wählen',
+      donate:'Spenden', noteText:'Ersetze den echten PayPal-Link vor der Veröffentlichung — der QR-Code wird live aus der UPI-ID in der Bild-URL erzeugt.',
+      upiIdLabel:'UPI-ID', copyId:'ID kopieren' },
+    el:{ switchLanguage:'Αλλαγή γλώσσας', switchLanguageDesc:'Αλλάξτε τη γλώσσα εμφάνισης του ιστότοπου',
+      heroTitle:'Κρατήστε τα mods ζωντανά',
+      heroP:'Κάθε build, patch και σελίδα εδώ φτιάχνεται μόνος μου — χωρίς ομάδα, χωρίς διαφημιστικό budget. Αν κάτι που έφτιαξα σου γλίτωσε χρόνο ή σου ξεκλείδωσε μια λειτουργία, μια μικρή συνεισφορά κρατά τη δουλειά να συνεχίζεται.',
+      statSolo:'Φτιαγμένο μόνος', statFree:'Δωρεάν', statAllReleases:'Όλες οι εκδόσεις', statNoAds:'Χωρίς διαφημίσεις', statEver:'Ποτέ',
+      waysToSupport:'Τρόποι υποστήριξης', upiDesc:'Άμεσα, χωρίς χρεώσεις — σκανάρετε παρακάτω ή χρησιμοποιήστε το ID',
+      paypalDesc:'Εφάπαξ ή επαναλαμβανόμενη, διεθνώς', coffeeDesc:'Γρήγορη μεμονωμένη υποστήριξη',
+      telegramName:'Telegram DM', telegramDesc:'Στείλτε μήνυμα απευθείας στον προγραμματιστή',
+      worksWith:'Λειτουργεί με', openUpiApp:'Άνοιγμα σε εφαρμογή UPI', chooseAmount:'Επιλέξτε ποσό',
+      donate:'Δωρεά', noteText:'Αντικαταστήστε τον πραγματικό σύνδεσμο PayPal πριν τη δημοσίευση — ο κωδικός QR δημιουργείται ζωντανά από το UPI ID στη διεύθυνση της εικόνας.',
+      upiIdLabel:'UPI ID', copyId:'Αντιγραφή ID' },
+    es:{ switchLanguage:'Cambiar idioma', switchLanguageDesc:'Cambia el idioma de visualización del sitio',
+      heroTitle:'Mantén los mods en marcha',
+      heroP:'Cada build, parche y página aquí se hace en solitario — sin equipo, sin presupuesto de publicidad. Si algo que hice te ahorró tiempo o desbloqueó una función que querías, una pequeña contribución mantiene el trabajo en marcha.',
+      statSolo:'Hecho en solitario', statFree:'Gratis', statAllReleases:'Todos los lanzamientos', statNoAds:'Sin anuncios', statEver:'Nunca',
+      waysToSupport:'Formas de apoyar', upiDesc:'Instantáneo, sin comisiones — escanea abajo o usa el ID',
+      paypalDesc:'Único o recurrente, internacional', coffeeDesc:'Apoyo rápido de una sola vez',
+      telegramName:'DM en Telegram', telegramDesc:'Escribe directamente al desarrollador',
+      worksWith:'Compatible con', openUpiApp:'Abrir en la app UPI', chooseAmount:'Elige un monto',
+      donate:'Donar', noteText:'Sustituye tu enlace real de PayPal antes de publicar — el código QR se genera en vivo a partir del ID de UPI en la URL de la imagen.',
+      upiIdLabel:'ID de UPI', copyId:'Copiar ID' },
+    fr:{ switchLanguage:'Changer de langue', switchLanguageDesc:'Modifier la langue d’affichage du site',
+      heroTitle:'Faites vivre les mods',
+      heroP:"Chaque build, patch et page ici est réalisé en solo — sans équipe, sans budget publicitaire. Si quelque chose que j'ai créé vous a fait gagner du temps ou débloqué une fonctionnalité voulue, une petite contribution permet de continuer.",
+      statSolo:'Fait en solo', statFree:'Gratuit', statAllReleases:'Toutes les versions', statNoAds:'Sans pub', statEver:'Jamais',
+      waysToSupport:'Façons de soutenir', upiDesc:'Instantané, sans frais — scannez ci-dessous ou utilisez l’ID',
+      paypalDesc:'Ponctuel ou récurrent, international', coffeeDesc:'Soutien rapide ponctuel',
+      telegramName:'DM Telegram', telegramDesc:'Écrivez directement au développeur',
+      worksWith:'Compatible avec', openUpiApp:'Ouvrir dans l’appli UPI', chooseAmount:'Choisir un montant',
+      donate:'Faire un don', noteText:'Remplacez le vrai lien PayPal avant publication — le QR code est généré en direct à partir de l’ID UPI dans l’URL de l’image.',
+      upiIdLabel:'ID UPI', copyId:'Copier l’ID' },
+    hi:{ switchLanguage:'भाषा बदलें', switchLanguageDesc:'वेबसाइट की प्रदर्शन भाषा बदलें',
+      heroTitle:'Rakshittips सपोर्ट और डोनेट',
+      heroP:'सोलो डेवलपर रक्षित धाकरिया को सीधे सपोर्ट करें ताकि नए एंड्रॉयड मॉड्स और टूल्स लगातार आते रहें।',
+      statSolo:'अकेले बनाया गया', statFree:'मुफ़्त', statAllReleases:'सभी रिलीज़', statNoAds:'बिना विज्ञापन', statEver:'हमेशा',
+      waysToSupport:'सहयोग के तरीके', upiDesc:'तुरंत, बिना शुल्क — नीचे स्कैन करें या ID का उपयोग करें',
+      paypalDesc:'एक बार या आवर्ती, अंतरराष्ट्रीय', coffeeDesc:'त्वरित एक बार का सहयोग',
+      telegramName:'Telegram DM', telegramDesc:'डेवलपर को सीधे संदेश भेजें',
+      worksWith:'इनके साथ काम करता है', openUpiApp:'UPI ऐप में खोलें', chooseAmount:'राशि चुनें',
+      donate:'दान करें', noteText:'प्रकाशित करने से पहले अपना असली PayPal लिंक डालें — QR कोड इमेज URL में मौजूद UPI ID से लाइव जनरेट होता है।',
+      upiIdLabel:'UPI ID', copyId:'ID कॉपी करें' },
+    hu:{ switchLanguage:'Nyelv váltása', switchLanguageDesc:'A weboldal megjelenítési nyelvének módosítása',
+      heroTitle:'Tartsd életben a modokat',
+      heroP:'Minden build, patch és landing oldal itt egyedül készül — csapat és hirdetési keret nélkül. Ha valami, amit készítettem, időt spórolt neked, vagy egy kívánt funkciót nyitott meg, egy kis hozzájárulás fenntartja a munkát.',
+      statSolo:'Egyedül készült', statFree:'Ingyenes', statAllReleases:'Minden kiadás', statNoAds:'Hirdetésmentes', statEver:'Soha',
+      waysToSupport:'Támogatási módok', upiDesc:'Azonnali, díjmentes — szkenneld be lent vagy használd az ID-t',
+      paypalDesc:'Egyszeri vagy ismétlődő, nemzetközi', coffeeDesc:'Gyors, egyszeri támogatás',
+      telegramName:'Telegram DM', telegramDesc:'Írj közvetlenül a fejlesztőnek',
+      worksWith:'Ezekkel működik', openUpiApp:'Megnyitás UPI appban', chooseAmount:'Válassz összeget',
+      donate:'Adományozás', noteText:'Publikálás előtt cseréld ki a valódi PayPal linkedre — a QR-kód a kép URL-jében lévő UPI ID-ból generálódik élőben.',
+      upiIdLabel:'UPI-azonosító', copyId:'Azonosító másolása' },
+    id:{ switchLanguage:'Ganti Bahasa', switchLanguageDesc:'Ubah bahasa tampilan situs',
+      heroTitle:'Terus dukung mod ini',
+      heroP:'Setiap build, patch, dan halaman landing di sini dibuat sendirian — tanpa tim, tanpa anggaran iklan. Jika sesuatu yang saya buat menghemat waktumu atau membuka fitur yang kamu inginkan, kontribusi kecil membantu pekerjaan ini terus berjalan.',
+      statSolo:'Dibuat sendiri', statFree:'Gratis', statAllReleases:'Semua rilis', statNoAds:'Tanpa iklan', statEver:'Selamanya',
+      waysToSupport:'Cara mendukung', upiDesc:'Instan, tanpa biaya — pindai di bawah atau gunakan ID',
+      paypalDesc:'Sekali atau berulang, internasional', coffeeDesc:'Dukungan cepat satu kali',
+      telegramName:'DM Telegram', telegramDesc:'Kirim pesan langsung ke developer',
+      worksWith:'Berfungsi dengan', openUpiApp:'Buka di aplikasi UPI', chooseAmount:'Pilih jumlah',
+      donate:'Donasi', noteText:'Ganti dengan tautan PayPal aslimu sebelum dipublikasikan — kode QR dibuat langsung dari ID UPI di URL gambar.',
+      upiIdLabel:'ID UPI', copyId:'Salin ID' },
+    it:{ switchLanguage:'Cambia lingua', switchLanguageDesc:'Cambia la lingua di visualizzazione del sito',
+      heroTitle:'Tieni vivi i mod',
+      heroP:'Ogni build, patch e landing page qui è realizzata in solitaria — niente team, niente budget pubblicitario. Se qualcosa che ho creato ti ha fatto risparmiare tempo o sbloccato una funzione desiderata, un piccolo contributo tiene vivo il lavoro.',
+      statSolo:'Creato in solitaria', statFree:'Gratis', statAllReleases:'Tutte le release', statNoAds:'Senza pubblicità', statEver:'Mai',
+      waysToSupport:'Modi per sostenere', upiDesc:'Istantaneo, senza commissioni — scansiona qui sotto o usa l’ID',
+      paypalDesc:'Una tantum o ricorrente, internazionale', coffeeDesc:'Supporto rapido una tantum',
+      telegramName:'DM Telegram', telegramDesc:'Scrivi direttamente allo sviluppatore',
+      worksWith:'Compatibile con', openUpiApp:'Apri nell’app UPI', chooseAmount:'Scegli un importo',
+      donate:'Dona', noteText:'Sostituisci il link PayPal reale prima della pubblicazione — il codice QR è generato in tempo reale dall’ID UPI nell’URL dell’immagine.',
+      upiIdLabel:'ID UPI', copyId:'Copia ID' },
+    pl:{ switchLanguage:'Zmień język', switchLanguageDesc:'Zmień język wyświetlania strony',
+      heroTitle:'Wspieraj rozwój modów',
+      heroP:'Każdy build, patch i strona tutaj powstają solo — bez zespołu, bez budżetu reklamowego. Jeśli coś, co stworzyłem, zaoszczędziło ci czas albo odblokowało funkcję, drobny wkład pozwala kontynuować pracę.',
+      statSolo:'Tworzone solo', statFree:'Za darmo', statAllReleases:'Wszystkie wydania', statNoAds:'Bez reklam', statEver:'Nigdy',
+      waysToSupport:'Sposoby wsparcia', upiDesc:'Natychmiastowo, bez opłat — zeskanuj poniżej lub użyj ID',
+      paypalDesc:'Jednorazowo lub cyklicznie, międzynarodowo', coffeeDesc:'Szybkie jednorazowe wsparcie',
+      telegramName:'Telegram DM', telegramDesc:'Napisz bezpośrednio do dewelopera',
+      worksWith:'Działa z', openUpiApp:'Otwórz w aplikacji UPI', chooseAmount:'Wybierz kwotę',
+      donate:'Wesprzyj', noteText:'Podmień prawdziwy link PayPal przed publikacją — kod QR jest generowany na żywo z ID UPI w adresie URL obrazu.',
+      upiIdLabel:'ID UPI', copyId:'Kopiuj ID' },
+    pt:{ switchLanguage:'Trocar idioma', switchLanguageDesc:'Altere o idioma de exibição do site',
+      heroTitle:'Mantenha os mods vivos',
+      heroP:'Cada build, patch e landing page aqui é feita sozinho — sem equipe, sem verba de anúncios. Se algo que eu fiz economizou seu tempo ou destravou um recurso que você queria, uma pequena contribuição mantém o trabalho em andamento.',
+      statSolo:'Feito sozinho', statFree:'Grátis', statAllReleases:'Todos os lançamentos', statNoAds:'Sem anúncios', statEver:'Nunca',
+      waysToSupport:'Formas de apoiar', upiDesc:'Instantâneo, sem taxas — escaneie abaixo ou use o ID',
+      paypalDesc:'Único ou recorrente, internacional', coffeeDesc:'Apoio rápido único',
+      telegramName:'DM no Telegram', telegramDesc:'Envie mensagem direta ao desenvolvedor',
+      worksWith:'Funciona com', openUpiApp:'Abrir no app UPI', chooseAmount:'Escolha um valor',
+      donate:'Doar', noteText:'Substitua pelo seu link real do PayPal antes de publicar — o QR code é gerado ao vivo a partir do ID UPI na URL da imagem.',
+      upiIdLabel:'ID UPI', copyId:'Copiar ID' },
+    sr:{ switchLanguage:'Промени језик', switchLanguageDesc:'Промените језик приказа сајта',
+      heroTitle:'Одржите модове у животу',
+      heroP:'Свака верзија, закрпа и почетна страница овде је направљена соло — без тима, без буџета за рекламе. Ако вам је нешто што сам направио уштедело време или откључало жељену функцију, мали допринос одржава рад у току.',
+      statSolo:'Соло направљено', statFree:'Бесплатно', statAllReleases:'Сва издања', statNoAds:'Без реклама', statEver:'Никада',
+      waysToSupport:'Начини подршке', upiDesc:'Тренутно, без накнада — скенирајте испод или користите ID',
+      paypalDesc:'Једнократно или периодично, међународно', coffeeDesc:'Брза једнократна подршка',
+      telegramName:'Telegram DM', telegramDesc:'Пишите директно developeру',
+      worksWith:'Ради са', openUpiApp:'Отвори у UPI апликацији', chooseAmount:'Изаберите износ',
+      donate:'Донирај', noteText:'Замените стварним PayPal линком пре објављивања — QR код се генерише уживо из UPI ID-а у URL-у слике.',
+      upiIdLabel:'UPI ID', copyId:'Копирај ID' },
+    th:{ switchLanguage:'เปลี่ยนภาษา', switchLanguageDesc:'เปลี่ยนภาษาที่แสดงบนเว็บไซต์',
+      heroTitle:'ร่วมสนับสนุนมอดต่อไป',
+      heroP:'ทุกบิลด์ แพตช์ และหน้าเว็บที่นี่ทำขึ้นเพียงคนเดียว — ไม่มีทีม ไม่มีงบโฆษณา หากสิ่งที่ผมสร้างช่วยประหยัดเวลาหรือปลดล็อกฟีเจอร์ที่คุณต้องการ การสนับสนุนเล็กๆ น้อยๆ ช่วยให้งานนี้ดำเนินต่อไปได้',
+      statSolo:'ทำคนเดียว', statFree:'ฟรี', statAllReleases:'ทุกเวอร์ชัน', statNoAds:'ไม่มีโฆษณา', statEver:'ตลอดไป',
+      waysToSupport:'วิธีสนับสนุน', upiDesc:'รวดเร็ว ไม่มีค่าธรรมเนียม — สแกนด้านล่างหรือใช้ ID',
+      paypalDesc:'ครั้งเดียวหรือประจำ ระดับนานาชาติ', coffeeDesc:'สนับสนุนแบบรวดเร็วครั้งเดียว',
+      telegramName:'ทัก Telegram', telegramDesc:'ส่งข้อความถึงผู้พัฒนาโดยตรง',
+      worksWith:'ใช้งานร่วมกับ', openUpiApp:'เปิดในแอป UPI', chooseAmount:'เลือกจำนวนเงิน',
+      donate:'บริจาค', noteText:'เปลี่ยนเป็นลิงก์ PayPal จริงของคุณก่อนเผยแพร่ — QR โค้ดสร้างขึ้นแบบเรียลไทม์จาก UPI ID ในลิงก์รูปภาพ',
+      upiIdLabel:'UPI ID', copyId:'คัดลอก ID' }
+  };;
